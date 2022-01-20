@@ -75,14 +75,18 @@ class Facturx
             }
             $facturx_found = false;
             $filespec = $pdfParsed->getObjectsByType('Filespec');
-            $facturxLength = null;
+            $facturxLength = 0;
+            $facturxFileName = "";
+
             foreach ($filespec as $spec) {
                 $specDetails = $spec->getDetails();
-                if (static::FACTURX_FILENAME == $specDetails['F']) {
+                $facturxFileName = $specDetails['F'];
+                if (static::FACTURX_FILENAME == $facturxFileName || "ZUGFeRD-invoice.xml" == $specDetails['F']) {
                     $facturx_found = true;
-                    if (!empty($specDetails['EF']) && isset($specDetails['EF']['F']) && isset($specDetails['EF']['F']['Length'])) {
+                    if (key_exists('Length', $specDetails['EF']['F'])){
                         $facturxLength = $specDetails['EF']['F']['Length']; // Get file size
                     }
+
                     break;
                 }
             }
@@ -102,7 +106,7 @@ class Facturx
             if (true == $checkXsd) {
                 $this->checkFacturxXsd($xmlString);
             }
-            if (null == $this->profil && false !== $xmlString) {
+            if (null == $this->profil && static::FACTURX_FILENAME == $facturxFileName) {
                 $doc = new \DOMDocument();
                 $doc->loadXML($xmlString);
                 $this->profil = $this->getFacturxProfil($doc);
