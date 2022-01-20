@@ -1,7 +1,6 @@
 {
     "name": "taronguyen/factur-x",
     "description": "Factur-X is the e-invoicing standard for France and Germany. The Factur-X specifications are available on the FNFE-MPE website. The Factur-X standard is also called ZUGFeRD 2.0 and 1.0 in Germany.",
-    "type": "library",
     "repositories": [
         {
             "type": "vcs",
