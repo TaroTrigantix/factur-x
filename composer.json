@@ -1,36 +1,21 @@
 {
-    "name": "atgp/factur-x",
-    "description": "PHP library to manage your Factur-X / ZUGFeRD 2.0 PDF invoices files",
-    "keywords": [
-        "php",
-        "invoice",
-        "factur-x",
-        "zugferd",
-        "pdf",
-        "xml"
-    ],
-    "license": "MIT",
+    "name": "taronguyen/factur-x",
+    "description": "Factur-X is the e-invoicing standard for France and Germany. The Factur-X specifications are available on the FNFE-MPE website. The Factur-X standard is also called ZUGFeRD 2.0 and 1.0 in Germany.",
     "type": "library",
+    "require": {
+        "setasign/fpdi": "^2.3",
+        "smalot/pdfparser": "^2.0"
+    },
+    "license": "MIT",
     "authors": [
         {
-            "name": "Lucas Gouy-Pailler",
-            "email": "lucas.gouypailler@atgp.net"
+            "name": "Taro Nguyen",
+            "email": "taronguyen@MBP-von-Taro.fritz.box"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Atgp\\FacturX\\": "src/"
+            "Atgp\\": "src/"
         }
-    },
-    "require": {
-        "php": ">=5.6",
-        "setasign/fpdf": "^1.8",
-        "setasign/fpdi": "^2.0",
-        "smalot/pdfparser": "^0.19.0",
-        "ext-dom": "*",
-        "ext-simplexml": "*",
-        "ext-libxml": "*",
-        "ext-zlib": "*",
-        "ext-fileinfo": "*"
     }
 }
