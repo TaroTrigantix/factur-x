@@ -31,13 +31,6 @@
         "ext-simplexml": "*",
         "ext-libxml": "*",
         "ext-zlib": "*",
-        "ext-fileinfo": "*",
-        "tarotrigantix/factur-x": "dev-master"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/TaroTrigantix/factur-x"
-        }
-    ]
+        "ext-fileinfo": "*"
+    }
 }
